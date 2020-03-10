@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChargerStation
+namespace Ladeskab
 {
-    class Program
+    class ConsoleLogger : ILogger
     {
-        static void Main(string[] args)
+        public void LogThis(string logText)
         {
+            Console.WriteLine(logText);
         }
     }
 }

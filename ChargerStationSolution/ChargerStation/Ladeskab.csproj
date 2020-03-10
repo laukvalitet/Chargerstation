@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A4ABFF6-DD82-40B5-9FF9-9EA0ED3265AC}</ProjectGuid>
+    <ProjectGuid>{2A39DA9F-86CF-4430-AE7D-352D0C930848}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ChargerStation</RootNamespace>
-    <AssemblyName>ChargerStation</AssemblyName>
+    <RootNamespace>Ladeskab</RootNamespace>
+    <AssemblyName>Ladeskab</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -57,10 +57,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RfidDetectedEventArgs.cs" />
     <Compile Include="RfidReader.cs" />
+    <Compile Include="States\OccupiedDoorClosedAwaitingRFID.cs" />
+    <Compile Include="States\OccupiedDoorClosedCheckingRFID.cs" />
+    <Compile Include="States\VacantDoorClosedPhoneConnectedAwaitingRFID.cs" />
+    <Compile Include="States\VacantDoorClosedPhoneConnectedCheckingRFID.cs" />
+    <Compile Include="States\VacantDoorOpenNoPhoneConnected.cs" />
+    <Compile Include="States\VacantDoorOpenPhoneConnected.cs" />
     <Compile Include="StationControl.cs" />
+    <Compile Include="States\VacantDoorClosedNoPhoneConnected.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

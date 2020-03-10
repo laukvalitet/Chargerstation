@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChargerStation
+namespace Ladeskab
 {
-    class Program
+    interface ILogger
     {
-        static void Main(string[] args)
-        {
-        }
+        void LogThis(string logText);
     }
 }

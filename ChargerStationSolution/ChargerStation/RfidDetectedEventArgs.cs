@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChargerStation
+namespace Ladeskab
 {
-    class Program
+    class RfidDetectedEventArgs
     {
-        static void Main(string[] args)
+        public int ID { get; set; }
+        public RfidDetectedEventArgs(int id)
         {
+            ID = id;
         }
     }
 }

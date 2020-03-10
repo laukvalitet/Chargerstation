@@ -27,7 +27,7 @@ namespace ChargerStation
 
         public void TerminateCharging()
         {
-            throw new NotImplementedException(); //implement timer or something
+            throw new NotImplementedException(); //on timeout
         }
     }
 }

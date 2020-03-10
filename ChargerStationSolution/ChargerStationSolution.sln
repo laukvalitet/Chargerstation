@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChargerStation", "ChargerStation\ChargerStation.csproj", "{3A4ABFF6-DD82-40B5-9FF9-9EA0ED3265AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChargerStation.Test.Unit", "ChargerStation.Test.Unit\ChargerStation.Test.Unit.csproj", "{BD1E378F-E0CC-4FFB-A4D9-E95774B5C51C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3A4ABFF6-DD82-40B5-9FF9-9EA0ED3265AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A4ABFF6-DD82-40B5-9FF9-9EA0ED3265AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A4ABFF6-DD82-40B5-9FF9-9EA0ED3265AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1E378F-E0CC-4FFB-A4D9-E95774B5C51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1E378F-E0CC-4FFB-A4D9-E95774B5C51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1E378F-E0CC-4FFB-A4D9-E95774B5C51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1E378F-E0CC-4FFB-A4D9-E95774B5C51C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

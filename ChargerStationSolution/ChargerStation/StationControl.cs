@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ladeskab.States;
 
-namespace Ladeskab
+namespace ChargerStation
 {
     class StationControl
     {

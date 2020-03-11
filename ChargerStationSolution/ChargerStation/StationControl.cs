@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ladeskab.States;
+using ChargerStation.States;
 
 namespace ChargerStation
 {
@@ -26,13 +26,13 @@ namespace ChargerStation
         public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, IChargeControl chargeControl)
         {
             //init states
-            VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED=new VacantDoorClosedNoPhoneConnected(this);
-            VACANT_DOOR_OPEN_NO_PHONE_CONNECTED=new VacantDoorOpenNoPhoneConnected(this);
-            VACANT_DOOR_OPEN_PHONE_CONNECTED = new VacantDoorOpenPhoneConnected(this);
-            VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID = new VacantDoorClosedPhoneConnectedAwaitingRFID(this);
-            VACANT_DOOR_CLOSED_PHONE_CONNECTED_CHECKING_RFID = new VacantDoorClosedPhoneConnectedCheckingRFID(this);
-            OCCUPIED_DOOR_CLOSED_AWAITING_RFID = new OccupiedDoorClosedAwaitingRFID(this);
-            OCCUPIED_DOOR_CLOSED_CHECKING_RFID = new OccupiedDoorClosedCheckingRFID(this);
+            VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED=new States.VacantDoorClosedNoPhoneConnected(this);
+            VACANT_DOOR_OPEN_NO_PHONE_CONNECTED=new States.VacantDoorOpenNoPhoneConnected(this);
+            VACANT_DOOR_OPEN_PHONE_CONNECTED = new States.VacantDoorOpenPhoneConnected(this);
+            VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID = new States.VacantDoorClosedPhoneConnectedAwaitingRFID(this);
+            VACANT_DOOR_CLOSED_PHONE_CONNECTED_CHECKING_RFID = new States.VacantDoorClosedPhoneConnectedCheckingRFID(this);
+            OCCUPIED_DOOR_CLOSED_AWAITING_RFID = new States.OccupiedDoorClosedAwaitingRFID(this);
+            OCCUPIED_DOOR_CLOSED_CHECKING_RFID = new States.OccupiedDoorClosedCheckingRFID(this);
 
             //Initial state
             _currentState = VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED;

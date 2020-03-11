@@ -21,7 +21,7 @@ namespace ChargerStation.States
 
         public void OnDoorOpened()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OnRfidDetected()

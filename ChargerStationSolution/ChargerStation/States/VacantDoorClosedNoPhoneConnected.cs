@@ -21,7 +21,8 @@ namespace ChargerStation.States
 
         public void OnDoorOpened()
         {
-            throw new NotImplementedException();
+
+            StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
 
         public void OnRfidDetected()

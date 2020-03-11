@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface IRfidReader
+    public interface IRfidReader
     {
         event EventHandler<RfidDetectedEventArgs> RfidDetected;
         void OnRfidDetected(int id);

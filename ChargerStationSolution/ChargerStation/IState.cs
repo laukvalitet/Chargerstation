@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface IState
+    public interface IState
     {
         StationControl StationControlRef { get; set; }
         void OnDoorClosed();

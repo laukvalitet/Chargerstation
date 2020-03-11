@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface IChargeControl
+    public interface IChargeControl
     {
         event EventHandler<EventArgs> PhoneConnected;
         event EventHandler<EventArgs> PhoneDisconnected;

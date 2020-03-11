@@ -7,7 +7,7 @@ using ChargerStation.States;
 
 namespace ChargerStation
 {
-    class StationControl
+    public class StationControl
     {
         public IState VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED { get; set; }
         public IState VACANT_DOOR_OPEN_NO_PHONE_CONNECTED { get; set; }

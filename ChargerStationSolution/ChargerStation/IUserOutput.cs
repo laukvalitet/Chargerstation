@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface IUserOutput
+    public interface IUserOutput
     {
         void Notify_OpenDoorConnectPhone();
         void Notify_ConnectPhone();

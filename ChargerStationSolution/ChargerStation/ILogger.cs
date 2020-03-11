@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface ILogger
+    public interface ILogger
     {
         void LogThis(string logText);
     }

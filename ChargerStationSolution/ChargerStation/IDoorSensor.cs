@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    interface IDoorSensor
+    public interface IDoorSensor
     {
         event EventHandler<EventArgs> DoorOpened;
         event EventHandler<EventArgs> DoorClosed;

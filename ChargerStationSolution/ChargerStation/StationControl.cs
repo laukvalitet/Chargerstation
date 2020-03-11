@@ -55,8 +55,7 @@ namespace ChargerStation
         { 
             _currentState = newState;
         }
-
-
+        
         public void DoorOpenedHandler(object sender, EventArgs e)
         {
             _currentState.OnDoorOpened();

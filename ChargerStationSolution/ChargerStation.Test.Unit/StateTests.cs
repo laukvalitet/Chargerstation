@@ -26,6 +26,7 @@ namespace ChargerStation.Test.Unit
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
             _chargeControl = Substitute.For<IChargeControl>();
+            _logger = Substitute.For<ILogger>();
             _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl);
         }
         

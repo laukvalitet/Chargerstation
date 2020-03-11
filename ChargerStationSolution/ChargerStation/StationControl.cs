@@ -22,8 +22,9 @@ namespace ChargerStation
         public IUserOutput UserOutput { get; set; }
         public IRfidReader RfidReader { get; set; }
         public IChargeControl ChargeControl { get; set; }
+        public ILogger Logger { get; set; }
 
-        public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, IChargeControl chargeControl)
+        public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, IChargeControl chargeControl, ILogger logger)
         {
             //init states
             VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED=new States.VacantDoorClosedNoPhoneConnected(this);
@@ -42,6 +43,7 @@ namespace ChargerStation
             UserOutput = userOutput;
             RfidReader = rfidReader;
             ChargeControl = chargeControl;
+            Logger = logger;
 
             //Attaching events
             DoorSensor.DoorOpened += DoorOpenedHandler;

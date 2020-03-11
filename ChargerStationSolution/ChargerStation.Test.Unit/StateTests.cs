@@ -26,7 +26,7 @@ namespace ChargerStation.Test.Unit
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
             _chargeControl = Substitute.For<IChargeControl>();
-            _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl);
+            _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger);
         }
         
         [Test]
@@ -34,6 +34,7 @@ namespace ChargerStation.Test.Unit
         {
             //arrange
             //_userValidation.ValidateEntryRequest(1111).Returns(true);
+            _doorSensor.OnDoorOpened();
 
             //act
             //_uut.RequestEntry(1111);

@@ -31,7 +31,6 @@ namespace ChargerStation
             VACANT_DOOR_OPEN_NO_PHONE_CONNECTED=new States.VacantDoorOpenNoPhoneConnected(this);
             VACANT_DOOR_OPEN_PHONE_CONNECTED = new States.VacantDoorOpenPhoneConnected(this);
             VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID = new States.VacantDoorClosedPhoneConnectedAwaitingRFID(this);
-            VACANT_DOOR_CLOSED_PHONE_CONNECTED_CHECKING_RFID = new States.VacantDoorClosedPhoneConnectedCheckingRFID(this);
             OCCUPIED_DOOR_CLOSED_AWAITING_RFID = new States.OccupiedDoorClosedAwaitingRFID(this);
             OCCUPIED_DOOR_CLOSED_CHECKING_RFID = new States.OccupiedDoorClosedCheckingRFID(this);
 
@@ -81,6 +80,16 @@ namespace ChargerStation
         public void RfidDetectedHandler(object sender, RfidDetectedEventArgs e)
         {
             CurrentState.OnRfidDetected();
+        }
+
+        public void LockDoorWithReceivedID(int ID)
+        {
+
+        }
+
+        public bool TryUnlockDoorWithReceivedID(int ID)
+        {
+
         }
 
     }

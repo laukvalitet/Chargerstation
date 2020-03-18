@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    public class RfidDetectedEventArgs
+    public class RfidDetectedEventArgs : EventArgs
     {
         public int ID { get; set; }
         public RfidDetectedEventArgs(int id)

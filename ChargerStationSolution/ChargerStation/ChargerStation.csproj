@@ -72,7 +72,6 @@
     <Compile Include="StationControl.cs" />
     <Compile Include="States\VacantDoorClosedNoPhoneConnected.cs" />
     <Compile Include="States\VacantDoorClosedPhoneConnectedAwaitingRFID.cs" />
-    <Compile Include="States\VacantDoorClosedPhoneConnectedCheckingRFID.cs" />
     <Compile Include="States\VacantDoorOpenNoPhoneConnected.cs" />
     <Compile Include="States\VacantDoorOpenPhoneConnected.cs" />
   </ItemGroup>

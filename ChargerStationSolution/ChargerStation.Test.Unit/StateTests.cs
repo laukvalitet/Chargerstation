@@ -71,7 +71,61 @@ namespace ChargerStation.Test.Unit
             _userOutput.Received().Notify_ScanRFID_ToLock();
         }
 
+        [Test]
+        public void from_VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID_to_OCCUPIED_DOOR_CLOSED_AWAITING_RFID()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
 
+
+            //act
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+
+            //assert
+            _uut.Received(1).LockDoorWithReceivedID(1234);
+            _logger.Received(1).LogThis("Door has been locked");
+            _userOutput.Received().Notify_DoorLocked_ScanRfidToUnlock();
+        }
+
+        [Test]
+        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID_to_OCCUPIED_DOOR_CLOSED_CHECKING_RFID()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+
+            //act
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+
+            //assert
+            _uut.Received(1).TryUnlockDoorWithReceivedID(1234);
+            Assert.That(_uut.TryUnlockDoorWithReceivedID(1234), Is.True);
+            _logger.Received(1).LogThis("Door has been unlocked");
+            _userOutput.Received().Notify_YouMayOpenDoorAndDisconnect();
+        }
+
+        [Test]
+        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID_to_OCCUPIED_DOOR_CLOSED_AWAITING_RFID()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+
+            //act
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(4321));
+
+            //assert
+            _uut.Received(1).TryUnlockDoorWithReceivedID(4321);
+            Assert.That(_uut.TryUnlockDoorWithReceivedID(4321), Is.False);
+            _logger.Received(1).LogThis("Wrong RFID, door remains locked");
+            _userOutput.Received().Notify_WrongRfidUnlockingFailed();
+        }
 
     }
 }

@@ -17,7 +17,7 @@ namespace ChargerStation
         public IState OCCUPIED_DOOR_CLOSED_AWAITING_RFID { get; set; }
         public IState OCCUPIED_DOOR_CLOSED_CHECKING_RFID { get; set; }
 
-        private IState _currentState;
+        public IState CurrentState { get; set; }
         public IDoorSensor DoorSensor { get; set; }
         public IUserOutput UserOutput { get; set; }
         public IRfidReader RfidReader { get; set; }
@@ -36,7 +36,7 @@ namespace ChargerStation
             OCCUPIED_DOOR_CLOSED_CHECKING_RFID = new States.OccupiedDoorClosedCheckingRFID(this);
 
             //Initial state
-            _currentState = VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED;
+            CurrentState = VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED;
 
             //init properties
             DoorSensor = doorSensor;
@@ -55,32 +55,32 @@ namespace ChargerStation
 
         public void SetState(IState newState)
         { 
-            _currentState = newState;
+            CurrentState = newState;
         }
         
         public void DoorOpenedHandler(object sender, EventArgs e)
         {
-            _currentState.OnDoorOpened();
+            CurrentState.OnDoorOpened();
         }
 
         public void DoorClosedHandler(object sender, EventArgs e)
         {
-            _currentState.OnDoorClosed();
+            CurrentState.OnDoorClosed();
         }
 
         public void PhoneConnectedHandler(object sender, EventArgs e)
         {
-            _currentState.OnPhoneConnected();
+            CurrentState.OnPhoneConnected();
         }
 
         public void PhoneDisconnectedHandler(object sender, EventArgs e)
         {
-            _currentState.OnPhoneDisconnected();
+            CurrentState.OnPhoneDisconnected();
         }
 
         public void RfidDetectedHandler(object sender, RfidDetectedEventArgs e)
         {
-            _currentState.OnRfidDetected();
+            CurrentState.OnRfidDetected();
         }
 
     }

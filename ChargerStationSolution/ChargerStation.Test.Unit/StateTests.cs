@@ -30,18 +30,18 @@ namespace ChargerStation.Test.Unit
         }
         
         [Test]
-        public void FromThisToThat()
+        public void from_VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED_to_VACANT_DOOR_OPEN_NO_PHONE_CONNECTED()
         {
             //arrange
             //_userValidation.ValidateEntryRequest(1111).Returns(true);
-            _doorSensor.OnDoorOpened();
 
             //act
-            //_uut.RequestEntry(1111);
-            //_uut.DoorOpen();
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
             //_door.Received(1).Close();
+            _userOutput.Received().Notify_ConnectPhone();
+            //Assert.That(_uut.CurrentState.GetType() == typeof(_uut.) );
         }
     }
 }

@@ -26,22 +26,52 @@ namespace ChargerStation.Test.Unit
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
             _chargeControl = Substitute.For<IChargeControl>();
+            _logger = Substitute.For<ILogger>();
             _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger);
         }
         
         [Test]
         public void from_VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED_to_VACANT_DOOR_OPEN_NO_PHONE_CONNECTED()
         {
-            //arrange
-            //_userValidation.ValidateEntryRequest(1111).Returns(true);
-
             //act
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
-            //_door.Received(1).Close();
+            _logger.Received(1).LogThis("Door opened");
             _userOutput.Received().Notify_ConnectPhone();
-            //Assert.That(_uut.CurrentState.GetType() == typeof(_uut.) );
         }
+
+        [Test]
+        public void from_VACANT_DOOR_OPEN_NO_PHONE_CONNECTED_to_VACANT_DOOR_OPEN_PHONE_CONNECTED()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+
+            //act
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+
+            //assert
+            _logger.Received(1).LogThis("Phone connected");
+            _userOutput.Received().Notify_PhoneConnectedCloseDoor();
+        }
+
+        [Test]
+        public void from_VACANT_DOOR_OPEN_PHONE_CONNECTED_to_VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+
+
+            //act
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
+
+            //assert
+            _logger.Received(1).LogThis("Door closed, awaiting RFID");
+            _userOutput.Received().Notify_ScanRFID_ToLock();
+        }
+
+
+
     }
 }

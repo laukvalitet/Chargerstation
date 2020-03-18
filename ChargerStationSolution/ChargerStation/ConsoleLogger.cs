@@ -10,7 +10,7 @@ namespace ChargerStation
     {
         public void LogThis(string logText)
         {
-            Console.WriteLine(logText);
+            Console.WriteLine("Logger: "+logText);
         }
     }
 }

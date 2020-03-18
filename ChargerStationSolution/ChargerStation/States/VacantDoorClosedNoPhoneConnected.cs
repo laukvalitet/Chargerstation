@@ -21,7 +21,7 @@ namespace ChargerStation.States
 
         public void OnDoorOpened()
         {
-
+            
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
 

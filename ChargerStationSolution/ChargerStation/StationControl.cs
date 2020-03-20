@@ -53,8 +53,10 @@ namespace ChargerStation
         }
 
         public void SetState(IState newState)
-        { 
+        {   
+            CurrentState.OnExit();
             CurrentState = newState;
+            CurrentState.OnEntry();
         }
         
         public void DoorOpenedHandler(object sender, EventArgs e)
@@ -89,7 +91,7 @@ namespace ChargerStation
 
         public bool TryUnlockDoorWithReceivedID(int ID)
         {
-
+            return true;
         }
 
     }

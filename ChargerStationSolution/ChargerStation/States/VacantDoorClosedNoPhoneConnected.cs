@@ -17,38 +17,33 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            throw new NotImplementedException();
+            StationControlRef.Logger.LogThis("Door is closed");
+            StationControlRef.UserOutput.Notify_OpenDoorConnectPhone();
         }
 
         public void OnExit()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorClosed()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorOpened()
         {
-            
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
 
         public void OnRfidDetected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneConnected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneDisconnected()
         {
-            throw new NotImplementedException();
         }
     }
 }

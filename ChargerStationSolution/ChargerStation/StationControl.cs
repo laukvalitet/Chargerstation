@@ -96,7 +96,7 @@ namespace ChargerStation
             {
                 return true;
             }
-            else if(ID!=RFIDtagNeededToUnlock)
+            else
             {
                 return false;
             }

@@ -37,6 +37,7 @@ namespace ChargerStation.States
         public void OnRfidDetected(int RFIDtag)
         {
             StationControlRef.LockDoorWithReceivedID(RFIDtag);
+            StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
         }
 
         public void OnPhoneConnected()

@@ -17,7 +17,8 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-          
+            StationControlRef.UserOutput.Notify_DoorLocked_ScanRfidToUnlock();
+            StationControlRef.Logger.LogThis("Door has been locked");
         }
 
         public void OnExit()
@@ -26,27 +27,23 @@ namespace ChargerStation.States
 
         public void OnDoorClosed()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorOpened()
         {
-            throw new NotImplementedException();
         }
 
         public void OnRfidDetected()
         {
-            throw new NotImplementedException();
+            StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_CHECKING_RFID);
         }
 
         public void OnPhoneConnected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneDisconnected()
         {
-            throw new NotImplementedException();
         }
     }
 }

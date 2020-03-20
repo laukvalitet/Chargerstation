@@ -15,6 +15,7 @@ namespace ChargerStation
         IRfidReader RfidReader { get; set; }
         IChargeControl ChargeControl { get; set; }
         ILogger Logger { get; set; }
+        IVerificationUnit VerificationUnit { get; set; }
         void SetState(IState newState);
         void DoorOpenedHandler(object sender, EventArgs e);
         void DoorClosedHandler(object sender, EventArgs e);

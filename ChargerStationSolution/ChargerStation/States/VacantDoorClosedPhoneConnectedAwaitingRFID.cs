@@ -18,7 +18,7 @@ namespace ChargerStation.States
         public void OnEntry()
         {
             StationControlRef.UserOutput.Notify_ScanRFID_ToLock();
-            StationControlRef.Logger.LogThis("Door closed, awaiting RFID tag",DateTime.Now);
+            StationControlRef.Logger.LogThis("Door closed, awaiting RFID tag");
 
         }
 
@@ -37,7 +37,7 @@ namespace ChargerStation.States
 
         public void OnRfidDetected(int RFIDtag)
         {
-            StationControlRef.LockDoorWithReceivedID(RFIDtag);
+            StationControlRef.VerificationUnit.LockDoorWithReceivedID(RFIDtag);
             StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
         }
 

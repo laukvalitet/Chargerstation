@@ -17,6 +17,7 @@ namespace ChargerStation.Test.Unit
         private ILogger _logger;
         private IRfidReader _rfidReader;
         private IUserOutput _userOutput;
+        private IVerificationUnit _verificationUnit;
         private StationControl _uut;
 
         [SetUp]
@@ -27,7 +28,9 @@ namespace ChargerStation.Test.Unit
             _rfidReader = Substitute.For<IRfidReader>();
             _chargeControl = Substitute.For<IChargeControl>();
             _logger = Substitute.For<ILogger>();
-            _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger);
+            _verificationUnit = Substitute.For<IVerificationUnit>();
+
+            _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger,_verificationUnit);
         }
         
         [Test]
@@ -90,7 +93,7 @@ namespace ChargerStation.Test.Unit
         }
 
         [Test]
-        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID_to_OCCUPIED_DOOR_CLOSED_CHECKING_RFID()
+        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID____checking_RFID()
         {
             //arrange
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);

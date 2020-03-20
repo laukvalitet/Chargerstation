@@ -17,37 +17,32 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            throw new NotImplementedException();
+            StationControlRef.UserOutput.Notify_CheckingRFID();
+            StationControlRef.Logger.LogThis("Checking RFID");
         }
 
         public void OnExit()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorClosed()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorOpened()
         {
-            
         }
 
         public void OnRfidDetected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneConnected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneDisconnected()
         {
-            throw new NotImplementedException();
         }
     }
 }

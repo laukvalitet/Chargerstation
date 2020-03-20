@@ -8,9 +8,9 @@ namespace ChargerStation.States
 {
     class VacantDoorOpenPhoneConnected : IState
     {
-        public StationControl StationControlRef { get; set; }
+        public IStationControl StationControlRef { get; set; }
 
-        public VacantDoorOpenPhoneConnected(StationControl stationControlRef)
+        public VacantDoorOpenPhoneConnected(IStationControl stationControlRef)
         {
             StationControlRef = stationControlRef;
         }

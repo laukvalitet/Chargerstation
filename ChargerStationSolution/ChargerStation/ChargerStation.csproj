@@ -62,7 +62,9 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="IRfidReader.cs" />
     <Compile Include="IState.cs" />
+    <Compile Include="IStationControl.cs" />
     <Compile Include="IUserOutput.cs" />
+    <Compile Include="IVerificationUnit.cs" />
     <Compile Include="States\OccupiedDoorClosedAwaitingRFID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="States\VacantDoorClosedPhoneConnectedAwaitingRFID.cs" />
     <Compile Include="States\VacantDoorOpenNoPhoneConnected.cs" />
     <Compile Include="States\VacantDoorOpenPhoneConnected.cs" />
+    <Compile Include="VerificationUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

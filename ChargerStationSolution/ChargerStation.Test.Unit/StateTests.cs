@@ -102,6 +102,7 @@ namespace ChargerStation.Test.Unit
             _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
 
             //assert
+
             //_uut.Received(1).TryUnlockDoorWithReceivedID(1234);
             //Assert.That(_uut.TryUnlockDoorWithReceivedID(1234), Is.True);
             _logger.Received(1).LogThis("Door has been unlocked");
@@ -121,6 +122,7 @@ namespace ChargerStation.Test.Unit
             _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(4321));
 
             //assert
+
             //_uut.Received(1).TryUnlockDoorWithReceivedID(4321);
             //Assert.That(_uut.TryUnlockDoorWithReceivedID(4321), Is.False);
             _logger.Received(1).LogThis("Wrong RFID, door remains locked");

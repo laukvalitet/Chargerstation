@@ -7,7 +7,7 @@ using ChargerStation.States;
 
 namespace ChargerStation
 {
-    public class StationControl
+    public class StationControl : IStationControl
     {
         public IState VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED { get; set; }
         public IState VACANT_DOOR_OPEN_NO_PHONE_CONNECTED { get; set; }
@@ -23,7 +23,6 @@ namespace ChargerStation
         public ILogger Logger { get; set; }
 
 
-        public int RFIDtagNeededToUnlock { get; set; }
      
 
         public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, IChargeControl chargeControl, ILogger logger)
@@ -84,23 +83,5 @@ namespace ChargerStation
         {
             CurrentState.OnRfidDetected(e.ID);
         }
-
-        public void LockDoorWithReceivedID(int ID)
-        {
-            RFIDtagNeededToUnlock = ID;
-        }
-
-        public bool TryUnlockDoorWithReceivedID(int ID)
-        {
-            if (ID==RFIDtagNeededToUnlock)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
     }
 }

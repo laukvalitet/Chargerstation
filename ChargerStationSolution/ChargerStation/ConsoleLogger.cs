@@ -10,7 +10,8 @@ namespace ChargerStation
     {
         public void LogThis(string logText)
         {
-            Console.WriteLine("Logger: "+logText);
+            string time = DateTime.Now.ToString("h:mm:ss");
+            Console.WriteLine("Logger at " +time+ " : "+logText);
         }
     }
 }

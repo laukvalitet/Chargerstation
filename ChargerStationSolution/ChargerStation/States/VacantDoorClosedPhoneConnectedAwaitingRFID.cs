@@ -8,9 +8,9 @@ namespace ChargerStation.States
 {
     class VacantDoorClosedPhoneConnectedAwaitingRFID : IState
     {
-        public StationControl StationControlRef { get; set; }
+        public IStationControl StationControlRef { get; set; }
 
-        public VacantDoorClosedPhoneConnectedAwaitingRFID(StationControl stationControlRef)
+        public VacantDoorClosedPhoneConnectedAwaitingRFID(IStationControl stationControlRef)
         {
             StationControlRef = stationControlRef;
         }

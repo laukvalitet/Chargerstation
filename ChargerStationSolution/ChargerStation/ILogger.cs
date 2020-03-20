@@ -8,6 +8,6 @@ namespace ChargerStation
 {
     public interface ILogger
     {
-        void LogThis(string logText,DateTime timestamp);
+        void LogThis(string logText);
     }
 }

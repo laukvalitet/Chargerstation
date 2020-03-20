@@ -35,13 +35,14 @@ namespace ChargerStation.States
 
         public void OnRfidDetected(int RFIDtag)
         {
+
             if (StationControlRef.VerificationUnit.TryUnlockDoorWithReceivedID(RFIDtag) == true)
             {
                 StationControlRef.Logger.LogThis("Door has been unlocked");
                 StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
                 StationControlRef.UserOutput.Notify_YouMayOpenDoorAndDisconnect();
             }
-            else if (StationControlRef.VerificationUnit.TryUnlockDoorWithReceivedID(RFIDtag) == false)
+            else 
             {
                 StationControlRef.Logger.LogThis("Wrong RFID, door remains locked");
                 StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);

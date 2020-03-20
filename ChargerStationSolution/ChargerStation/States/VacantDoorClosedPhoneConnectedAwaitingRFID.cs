@@ -36,7 +36,7 @@ namespace ChargerStation.States
 
         public void OnRfidDetected()
         {
-            StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_CHECKING_RFID);
+            StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
         }
 
         public void OnPhoneConnected()

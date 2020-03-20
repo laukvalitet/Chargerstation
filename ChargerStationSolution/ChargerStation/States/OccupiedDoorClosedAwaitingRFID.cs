@@ -17,12 +17,11 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            throw new NotImplementedException();
+          
         }
 
         public void OnExit()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorClosed()

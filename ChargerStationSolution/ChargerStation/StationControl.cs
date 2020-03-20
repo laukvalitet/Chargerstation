@@ -13,9 +13,7 @@ namespace ChargerStation
         public IState VACANT_DOOR_OPEN_NO_PHONE_CONNECTED { get; set; }
         public IState VACANT_DOOR_OPEN_PHONE_CONNECTED { get; set; }
         public IState VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID { get; set; }
-        public IState VACANT_DOOR_CLOSED_PHONE_CONNECTED_CHECKING_RFID { get; set; }
         public IState OCCUPIED_DOOR_CLOSED_AWAITING_RFID { get; set; }
-        public IState OCCUPIED_DOOR_CLOSED_CHECKING_RFID { get; set; }
 
         public IState CurrentState { get; set; }
         public IDoorSensor DoorSensor { get; set; }
@@ -32,7 +30,6 @@ namespace ChargerStation
             VACANT_DOOR_OPEN_PHONE_CONNECTED = new States.VacantDoorOpenPhoneConnected(this);
             VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID = new States.VacantDoorClosedPhoneConnectedAwaitingRFID(this);
             OCCUPIED_DOOR_CLOSED_AWAITING_RFID = new States.OccupiedDoorClosedAwaitingRFID(this);
-            OCCUPIED_DOOR_CLOSED_CHECKING_RFID = new States.OccupiedDoorClosedCheckingRFID(this);
 
             //Initial state
             CurrentState = VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED;

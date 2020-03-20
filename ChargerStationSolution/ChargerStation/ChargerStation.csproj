@@ -64,7 +64,6 @@
     <Compile Include="IState.cs" />
     <Compile Include="IUserOutput.cs" />
     <Compile Include="States\OccupiedDoorClosedAwaitingRFID.cs" />
-    <Compile Include="States\OccupiedDoorClosedCheckingRFID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RfidDetectedEventArgs.cs" />

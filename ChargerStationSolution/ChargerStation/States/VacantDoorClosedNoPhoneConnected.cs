@@ -17,7 +17,7 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.Logger.LogThis("Door is closed");
+            StationControlRef.Logger.LogThis("Door is closed",DateTime.Now);
             StationControlRef.UserOutput.Notify_OpenDoorConnectPhone();
         }
 

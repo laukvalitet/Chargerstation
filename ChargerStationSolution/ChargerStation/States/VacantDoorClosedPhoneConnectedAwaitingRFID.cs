@@ -14,6 +14,17 @@ namespace ChargerStation.States
         {
             StationControlRef = stationControlRef;
         }
+
+        public void OnEntry()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnExit()
+        {
+            throw new NotImplementedException();
+        }
+
         public void OnDoorClosed()
         {
             throw new NotImplementedException();

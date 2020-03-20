@@ -87,12 +87,19 @@ namespace ChargerStation
 
         public void LockDoorWithReceivedID(int ID)
         {
-
+            RFIDtagNeededToUnlock = ID;
         }
 
         public bool TryUnlockDoorWithReceivedID(int ID)
         {
-            return true;
+            if (ID==RFIDtagNeededToUnlock)
+            {
+                return true;
+            }
+            else if(ID!=RFIDtagNeededToUnlock)
+            {
+                return false;
+            }
         }
 
     }

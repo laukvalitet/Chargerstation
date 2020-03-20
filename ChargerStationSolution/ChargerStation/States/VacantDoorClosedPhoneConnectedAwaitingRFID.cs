@@ -17,37 +17,34 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            throw new NotImplementedException();
+            StationControlRef.UserOutput.Notify_ScanRFID_ToLock();
+            StationControlRef.Logger.LogThis("Door is closed. Awaiting RFID tag.");
         }
 
         public void OnExit()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorClosed()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorOpened()
         {
-            throw new NotImplementedException();
+            StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_PHONE_CONNECTED);
         }
 
         public void OnRfidDetected()
         {
-            throw new NotImplementedException();
+            StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_CHECKING_RFID);
         }
 
         public void OnPhoneConnected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneDisconnected()
         {
-            throw new NotImplementedException();
         }
     }
 }

@@ -41,10 +41,11 @@ namespace ChargerStation.States
                 StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
                 StationControlRef.UserOutput.Notify_YouMayOpenDoorAndDisconnect();
             }
-            else
+            else if (StationControlRef.TryUnlockDoorWithReceivedID(RFIDtag) == false)
             {
                 StationControlRef.Logger.LogThis("Wrong RFID, door remains locked");
                 StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
+                StationControlRef.UserOutput.Notify_WrongRfidUnlockingFailed();
             }
         }
 

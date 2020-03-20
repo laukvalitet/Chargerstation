@@ -34,7 +34,7 @@ namespace ChargerStation.States
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_PHONE_CONNECTED);
         }
 
-        public void OnRfidDetected()
+        public void OnRfidDetected(int RFIDtag)
         {
             StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
         }

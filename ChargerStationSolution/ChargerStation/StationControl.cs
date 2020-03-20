@@ -22,6 +22,10 @@ namespace ChargerStation
         public IChargeControl ChargeControl { get; set; }
         public ILogger Logger { get; set; }
 
+
+        public int RFIDtagNeededToUnlock { get; set; }
+     
+
         public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, IChargeControl chargeControl, ILogger logger)
         {
             //init states
@@ -78,7 +82,7 @@ namespace ChargerStation
 
         public void RfidDetectedHandler(object sender, RfidDetectedEventArgs e)
         {
-            CurrentState.OnRfidDetected();
+            CurrentState.OnRfidDetected(e.ID);
         }
 
         public void LockDoorWithReceivedID(int ID)

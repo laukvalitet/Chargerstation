@@ -13,7 +13,7 @@ namespace ChargerStation
         void OnExit();
         void OnDoorClosed();
         void OnDoorOpened();
-        void OnRfidDetected();
+        void OnRfidDetected(int RFIDtag);
         void OnPhoneConnected();
         void OnPhoneDisconnected();
     }

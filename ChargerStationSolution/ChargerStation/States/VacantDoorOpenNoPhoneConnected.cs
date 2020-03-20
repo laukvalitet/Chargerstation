@@ -34,7 +34,7 @@ namespace ChargerStation.States
         {
         }
 
-        public void OnRfidDetected()
+        public void OnRfidDetected(int RFIDtag)
         {
             
         }

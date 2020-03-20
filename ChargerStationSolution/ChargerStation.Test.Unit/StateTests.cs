@@ -109,7 +109,7 @@ namespace ChargerStation.Test.Unit
         }
 
         [Test]
-        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID_to_OCCUPIED_DOOR_CLOSED_AWAITING_RFID()
+        public void from_OCCUPIED_DOOR_CLOSED_AWAITING_RFID_____wrong_RFID_detected()
         {
             //arrange
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
@@ -126,6 +126,5 @@ namespace ChargerStation.Test.Unit
             _logger.Received(1).LogThis("Wrong RFID, door remains locked");
             _userOutput.Received().Notify_WrongRfidUnlockingFailed();
         }
-
     }
 }

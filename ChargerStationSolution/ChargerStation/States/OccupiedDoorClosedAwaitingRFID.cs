@@ -39,6 +39,7 @@ namespace ChargerStation.States
             {
                 StationControlRef.Logger.LogThis("Door has been unlocked");
                 StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
+                StationControlRef.UserOutput.Notify_YouMayOpenDoorAndDisconnect();
             }
             else
             {

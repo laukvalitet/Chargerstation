@@ -17,37 +17,33 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            throw new NotImplementedException();
+            StationControlRef.Logger.LogThis("Phone connected");
+            StationControlRef.UserOutput.Notify_PhoneConnectedCloseDoor();
         }
 
         public void OnExit()
         {
-            throw new NotImplementedException();
         }
 
         public void OnDoorClosed()
         {
-            throw new NotImplementedException();
+            StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
         }
 
         public void OnDoorOpened()
         {
-            throw new NotImplementedException();
         }
 
         public void OnRfidDetected()
-        {
-            throw new NotImplementedException();
-        }
+        { }
 
         public void OnPhoneConnected()
         {
-            throw new NotImplementedException();
         }
 
         public void OnPhoneDisconnected()
         {
-            throw new NotImplementedException();
+            StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
     }
 }

@@ -67,7 +67,7 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
 
             //assert
-            _logger.Received(1).LogThis("Door closed, awaiting RFID");
+            _logger.Received(1).LogThis("Door closed, awaiting RFID tag");
             _userOutput.Received().Notify_ScanRFID_ToLock();
         }
 

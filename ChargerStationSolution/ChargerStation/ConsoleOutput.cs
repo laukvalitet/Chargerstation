@@ -52,14 +52,17 @@ namespace ChargerStation
         {
             Console.WriteLine("No Connection to phone");
         }
+
         public void Notify_ChargerPhoneFullyCharged()
         {
             Console.WriteLine("Phone is fully charged");
         }
+
         public void Notify_ChargerCharging()
         {
             Console.WriteLine("Charging phone");
         }
+
         void Notify_ChargerError()
         {
             Console.WriteLine("Attempt to charging phone failed, disconnect your phone.");

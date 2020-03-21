@@ -15,10 +15,6 @@ namespace ChargerStation
         public void OnPhoneConnected()
         {
             PhoneConnected?.Invoke(this, EventArgs.Empty);
-            if (power=0)
-            {
-                
-            }
         }
 
         public void OnPhoneDisconnected()

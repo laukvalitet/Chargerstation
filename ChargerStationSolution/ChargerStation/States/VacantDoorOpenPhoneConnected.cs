@@ -39,6 +39,7 @@ namespace ChargerStation.States
 
         public void OnPhoneConnected()
         {
+            StationControlRef.ChargeControl.OnPhoneDisconnected();
         }
 
         public void OnPhoneDisconnected()

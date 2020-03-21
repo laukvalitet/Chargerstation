@@ -54,6 +54,7 @@ namespace ChargerStation
             RfidReader.RfidDetected += RfidDetectedHandler;
             ChargeControl.PhoneConnected += PhoneConnectedHandler;
             ChargeControl.PhoneDisconnected += PhoneDisconnectedHandler;
+            ChargeControl.NewCurrentValueEvent += NewCurrentValueHandler;
         }
 
         public void SetState(IState newState)
@@ -86,6 +87,11 @@ namespace ChargerStation
         public void RfidDetectedHandler(object sender, RfidDetectedEventArgs e)
         {
             CurrentState.OnRfidDetected(e.ID);
+        }
+
+        public void NewCurrentValueHandler(object sender, CurrentEventArgs e)
+        {
+            Logger.LogThis("Current current value: " + e.Current + " mA");
         }
     }
 }

@@ -63,7 +63,7 @@ namespace ChargerStation
             Console.WriteLine("Charging phone");
         }
 
-        void Notify_ChargerError()
+        public void Notify_ChargerError()
         {
             Console.WriteLine("Attempt to charging phone failed, disconnect your phone.");
         }

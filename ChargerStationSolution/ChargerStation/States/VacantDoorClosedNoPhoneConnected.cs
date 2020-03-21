@@ -40,6 +40,7 @@ namespace ChargerStation.States
 
         public void OnPhoneConnected()
         {
+
         }
 
         public void OnPhoneDisconnected()

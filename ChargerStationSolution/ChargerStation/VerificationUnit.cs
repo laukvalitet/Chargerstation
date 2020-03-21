@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChargerStation
 {
-    class VerificationUnit : IVerificationUnit
+    public class VerificationUnit : IVerificationUnit
     {
         public int RFIDtagNeededToUnlock { get; set; }
         public void LockDoorWithReceivedID(int ID)

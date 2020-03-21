@@ -17,7 +17,7 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.Logger.LogThis("Phone connected",DateTime.Now);
+            StationControlRef.Logger.LogThis("Phone connected");
             StationControlRef.UserOutput.Notify_PhoneConnectedCloseDoor();
         }
 

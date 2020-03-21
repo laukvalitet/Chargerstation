@@ -17,12 +17,13 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.Logger.LogThis("Door opened",DateTime.Now);
+            StationControlRef.Logger.LogThis("Door opened");
             StationControlRef.UserOutput.Notify_ConnectPhone();
         }
 
         public void OnExit()
         {
+            
         }
 
         public void OnDoorClosed()

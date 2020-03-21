@@ -19,7 +19,7 @@ namespace ChargerStation
         private const double OverloadCurrent = 750; // mA
         private const int ChargeTimeMinutes = 20; // minutes
         private const int CurrentTickInterval = 250; // ms
-        public event EventHandler<CurrentEventArgs> CurrentValueEvent;
+        
 
         public double CurrentValue { get; private set; }
 
@@ -117,7 +117,7 @@ namespace ChargerStation
 
         private void OnNewCurrent()
         {
-            CurrentValueEvent?.Invoke(this, new CurrentEventArgs() { Current = this.CurrentValue });
+            NewCurrentValueEvent?.Invoke(this, new CurrentEventArgs() { Current = this.CurrentValue });
         }
     }
 }

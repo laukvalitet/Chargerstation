@@ -17,8 +17,8 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.UserOutput.Notify_DoorLocked_ScanRfidToUnlock();
             StationControlRef.Logger.LogThis("Door has been locked");
+            StationControlRef.UserOutput.Notify_DoorLocked_ScanRfidToUnlock();
         }
 
         public void OnExit()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace ChargerStation
 {
@@ -25,5 +26,9 @@ namespace ChargerStation
         void InitiateCharging();
         void TerminateCharging();
 
+        void TimerOnElapsed(object sender, ElapsedEventArgs e);
+        void OnNewCurrent();
+        Timer _timer;
+        double CurrentValue { get; private set; }
     }
 }

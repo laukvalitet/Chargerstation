@@ -16,5 +16,9 @@ namespace ChargerStation
         void Notify_DoorLocked_ScanRfidToUnlock();
         void Notify_WrongRfidUnlockingFailed();
         void Notify_YouMayOpenDoorAndDisconnect();
+        void Notify_ChargerNoConnection();
+        void Notify_ChargerPhoneFullyCharged();
+        void Notify_ChargerCharging();
+        void Notify_ChargerError();
     }
 }

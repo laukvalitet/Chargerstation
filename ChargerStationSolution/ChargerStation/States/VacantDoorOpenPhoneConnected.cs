@@ -19,6 +19,7 @@ namespace ChargerStation.States
         {
             StationControlRef.Logger.LogThis("Phone connected");
             StationControlRef.UserOutput.Notify_PhoneConnectedCloseDoor();
+            //StationControlRef.ChargeControl.TimerOnElapsed(fatter ej hvad den skal tage);
         }
 
         public void OnExit()
@@ -28,6 +29,7 @@ namespace ChargerStation.States
         public void OnDoorClosed()
         {
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
+
         }
 
         public void OnDoorOpened()

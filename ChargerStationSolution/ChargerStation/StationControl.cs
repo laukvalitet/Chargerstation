@@ -91,7 +91,7 @@ namespace ChargerStation
 
         public void NewCurrentValueHandler(object sender, CurrentEventArgs e)
         {
-            Logger.LogThis("Current current value: " + e.Current + " mA");
+           // Logger.LogThis("Current current value: " + e.Current + " mA");
         }
     }
 }

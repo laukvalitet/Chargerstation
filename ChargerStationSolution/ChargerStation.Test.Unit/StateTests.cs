@@ -132,5 +132,23 @@ namespace ChargerStation.Test.Unit
             _logger.Received(1).LogThis("Wrong RFID, door remains locked");
             _userOutput.Received().Notify_WrongRfidUnlockingFailed();
         }
+
+
+        [Test]
+        public void from_VACANT_DOOR_OPEN_PHONE_CONNECTED_to_VACANT_DOOR_OPEN_NO_PHONE_CONNECTED()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+
+
+            //act
+            _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
+
+            //assert
+            _chargeControl.Received(1).TerminateCharging();
+            _logger.Received(1).LogThis("Phone has been disconnected");
+        }
+
     }
 }

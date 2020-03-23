@@ -46,6 +46,7 @@ namespace ChargerStation.States
         {
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
             StationControlRef.ChargeControl.TerminateCharging();
+            StationControlRef.Logger.LogThis("Phone has been disconnected");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ChargerStation
             Console.WriteLine("Write open to open");
             Console.WriteLine("Write connect to connect phone.");
             Console.WriteLine("write close to close.");
-            Console.WriteLine("Write scan,<integer RFID tag> to scan RFID.");
+            Console.WriteLine("Write scan,<integer RFID tag between 1000 and 9999> to scan RFID.");
             Console.WriteLine("Write disconnect to disconnect phone.");
 
             Regex scanRegex = new Regex(@"^\bscan\b,\b[1-9][0-9]{3}\b$");

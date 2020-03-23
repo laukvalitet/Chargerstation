@@ -28,7 +28,7 @@ namespace ChargerStation
 
         void TimerOnElapsed(object sender, ElapsedEventArgs e);
         void OnNewCurrent();
-        Timer _timer;
-        double CurrentValue { get; private set; }
+        Timer _timer { get; set; }
+        double CurrentValue { get; set; }
     }
 }

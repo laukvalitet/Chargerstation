@@ -21,13 +21,13 @@ namespace ChargerStation
         private const int CurrentTickInterval = 250; // ms
         
 
-        public double CurrentValue { get; private set; }
+        public double CurrentValue { get; set; }
 
-        public bool Connected { get; private set; }
+        public bool Connected { get; set; }
 
         private bool _overload;
         private bool _charging;
-        private Timer _timer;
+        public Timer _timer { get; set; }
         private int _ticksSinceStart;
 
         public ChargeControl()
@@ -39,7 +39,7 @@ namespace ChargerStation
 
         }
 
-        private void TimerOnElapsed(object sender, ElapsedEventArgs e)
+        public void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
             // Only execute if charging
             if (_charging)
@@ -115,7 +115,7 @@ namespace ChargerStation
             _charging = false;
         }
 
-        private void OnNewCurrent()
+        public void OnNewCurrent()
         {
             NewCurrentValueEvent?.Invoke(this, new CurrentEventArgs() { Current = this.CurrentValue });
         }

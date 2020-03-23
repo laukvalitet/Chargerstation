@@ -17,9 +17,7 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.Logger.LogThis("Phone connected");
-            StationControlRef.UserOutput.Notify_PhoneConnectedCloseDoor();
-            StationControlRef.ChargeControl.InitiateCharging();
+            
         }
 
         public void OnExit()
@@ -28,6 +26,8 @@ namespace ChargerStation.States
 
         public void OnDoorClosed()
         {
+            StationControlRef.Logger.LogThis("Door closed, awaiting RFID tag");
+            StationControlRef.UserOutput.Notify_ScanRFID_ToLock();
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID);
         }
 
@@ -44,9 +44,9 @@ namespace ChargerStation.States
 
         public void OnPhoneDisconnected()
         {
-            StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
             StationControlRef.ChargeControl.TerminateCharging();
             StationControlRef.Logger.LogThis("Phone has been disconnected");
+            StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
     }
 }

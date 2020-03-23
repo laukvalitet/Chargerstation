@@ -36,8 +36,7 @@ namespace ChargerStation
             VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID = new States.VacantDoorClosedPhoneConnectedAwaitingRFID(this);
             OCCUPIED_DOOR_CLOSED_AWAITING_RFID = new States.OccupiedDoorClosedAwaitingRFID(this);
 
-            //Initial state
-            CurrentState = VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED;
+            
 
             //init properties
             DoorSensor = doorSensor;
@@ -55,11 +54,14 @@ namespace ChargerStation
             ChargeControl.PhoneConnected += PhoneConnectedHandler;
             ChargeControl.PhoneDisconnected += PhoneDisconnectedHandler;
             ChargeControl.NewCurrentValueEvent += NewCurrentValueHandler;
+
+            //Initial state
+            SetState(VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED);
         }
 
         public void SetState(IState newState)
         {   
-            CurrentState.OnExit();
+            
             CurrentState = newState;
             CurrentState.OnEntry();
         }
@@ -91,7 +93,7 @@ namespace ChargerStation
 
         public void NewCurrentValueHandler(object sender, CurrentEventArgs e)
         {
-           // Logger.LogThis("Current current value: " + e.Current + " mA");
+            Logger.LogThis("Current current value: " + e.Current + " mA");
         }
     }
 }

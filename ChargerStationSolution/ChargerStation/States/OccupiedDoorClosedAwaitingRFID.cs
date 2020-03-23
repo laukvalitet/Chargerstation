@@ -45,7 +45,6 @@ namespace ChargerStation.States
             else 
             {
                 StationControlRef.Logger.LogThis("Wrong RFID, door remains locked");
-                StationControlRef.SetState(StationControlRef.OCCUPIED_DOOR_CLOSED_AWAITING_RFID);
                 StationControlRef.UserOutput.Notify_WrongRfidUnlockingFailed();
             }
         }

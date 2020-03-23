@@ -13,14 +13,13 @@ namespace ChargerStation
         {
             DoorSensor doorSensor = new DoorSensor();
             ConsoleOutput consoleOutput = new ConsoleOutput();
+            FileLogger fileLogger = new FileLogger();
             ConsoleLogger consoleLogger = new ConsoleLogger();
             VerificationUnit verificationUnit = new VerificationUnit();
             RfidReader rfidReader = new RfidReader();
             ChargeControl chargeControl = new ChargeControl();
 
-            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,chargeControl,consoleLogger,verificationUnit);
-
-
+            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,chargeControl,fileLogger,verificationUnit);
 
             Console.WriteLine("Write open to open");
             Console.WriteLine("Write connect to connect phone.");
@@ -38,7 +37,7 @@ namespace ChargerStation
                 {
                     doorSensor.OnDoorOpened();
                 }
-                else if (userInput == "connect")
+                else if (userInput == "connect" )
                 {
                     chargeControl.OnPhoneConnected();
                 }

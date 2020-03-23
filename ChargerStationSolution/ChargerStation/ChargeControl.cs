@@ -67,14 +67,12 @@ namespace ChargerStation
         public void OnPhoneConnected()
         {
             Connected = true;
-            InitiateCharging();
             PhoneConnected?.Invoke(this, EventArgs.Empty);
         }
 
         public void OnPhoneDisconnected()
         {
             Connected = false;
-            TerminateCharging();
             PhoneDisconnected?.Invoke(this, EventArgs.Empty);
         }
 

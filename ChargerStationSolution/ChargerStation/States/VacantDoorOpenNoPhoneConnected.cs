@@ -17,8 +17,7 @@ namespace ChargerStation.States
 
         public void OnEntry()
         {
-            StationControlRef.Logger.LogThis("Door opened");
-            StationControlRef.UserOutput.Notify_ConnectPhone();
+            
         }
 
         public void OnExit()
@@ -28,6 +27,7 @@ namespace ChargerStation.States
 
         public void OnDoorClosed()
         {
+
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED);
         }
 
@@ -42,6 +42,9 @@ namespace ChargerStation.States
 
         public void OnPhoneConnected()
         {
+            StationControlRef.Logger.LogThis("Phone connected");
+            StationControlRef.UserOutput.Notify_PhoneConnectedCloseDoor();
+            StationControlRef.ChargeControl.InitiateCharging();
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_PHONE_CONNECTED);
         }
 

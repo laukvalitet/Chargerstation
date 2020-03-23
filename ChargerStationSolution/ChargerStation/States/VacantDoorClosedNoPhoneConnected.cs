@@ -31,6 +31,8 @@ namespace ChargerStation.States
 
         public void OnDoorOpened()
         {
+            StationControlRef.Logger.LogThis("Door opened");
+            StationControlRef.UserOutput.Notify_ConnectPhone();
             StationControlRef.SetState(StationControlRef.VACANT_DOOR_OPEN_NO_PHONE_CONNECTED);
         }
 

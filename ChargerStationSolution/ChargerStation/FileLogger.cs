@@ -9,17 +9,19 @@ namespace ChargerStation
 {
     public class FileLogger : ILogger
     {
-        public StreamWriter writer (string path, bool append);
+        public StreamWriter writer;
         
-        public FileLogger
+        public FileLogger()
         {
-            writer = new StreamWriter ("ChargerstationLog.txt", true);
+            //writer = new StreamWriter ("ChargerstationLog.txt", true);
         }
         
         public void LogThis(string logText)
         {
+            writer = new StreamWriter("ChargerstationLog.txt", true);
             string time = DateTime.Now.ToString("h:mm:ss");
-            writer.Write("Logger at " +time+ " : "+logText);
+            writer.WriteLine("Logger at " +time+ " : "+logText);
+            writer.Close();
         }
     }
 }

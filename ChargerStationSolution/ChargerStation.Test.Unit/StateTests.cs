@@ -150,5 +150,46 @@ namespace ChargerStation.Test.Unit
             _logger.Received(1).LogThis("Phone has been disconnected");
         }
 
+        [Test]
+        public void from_VACANT_DOOR_CLOSED_PHONE_CONNECTED_AWAITING_RFID_to_VACANT_DOOR_OPEN_PHONE_CONNECTED()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty); 
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty); 
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+            _verificationUnit.TryUnlockDoorWithReceivedID(1234).Returns(true);
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+            
+
+            //act
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+
+            //assert
+            _logger.Received(1).LogThis("Door has been unlocked");
+            _userOutput.Received().Notify_DoorOpened();
+        }
+
+        [Test]
+        public void from_VACANT_DOOR_OPEN_NO_PHONE_CONNECTED_to_VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED()
+        {
+            //arrange
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty); 
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty); 
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+            _verificationUnit.TryUnlockDoorWithReceivedID(1234).Returns(true);
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
+
+            //act
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+
+            //assert
+            _logger.Received(1).LogThis("Door closed");
+            _userOutput.Received().Notify_DoorClosed();
+        }
+
     }
 }

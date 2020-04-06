@@ -120,7 +120,6 @@ namespace ChargerStation.Test.Unit
 
             //act
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
-            _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
             _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
             _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(2000));
 

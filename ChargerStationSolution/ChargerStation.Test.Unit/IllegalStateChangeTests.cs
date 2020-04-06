@@ -195,7 +195,3 @@ namespace ChargerStation.Test.Unit
 
     }
 }
-
-//testing for illegal state changes
-_userOutput.Received(0).Notify_CheckingRFID();
-_userOutput.Received(0).Notify_ChargerCharging();

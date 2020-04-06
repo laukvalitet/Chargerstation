@@ -117,9 +117,35 @@ namespace ChargerStation.Test.Unit
 
 
             //act
-  
+            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
+            _rfidReader.OnRfidDetected(2000);
+
 
             //assert
+            //correct behavior
+            _logger.Received(1).LogThis("Door is closed");
+            _userOutput.Received(1).Notify_OpenDoorConnectPhone();
+            _logger.Received(1).LogThis("Door opened");
+            _userOutput.Received(1).Notify_ConnectPhone();
+            _logger.Received(1).LogThis("Phone connected");
+            _userOutput.Received(1).Notify_PhoneConnectedCloseDoor();
+            _logger.Received(1).LogThis("Phone has been disconnected");
+
+
+            //incorrect behaviour
+            _logger.Received(0).LogThis("Door has been locked");
+            _logger.Received(0).LogThis("Door has been unlocked");
+            _logger.Received(0).LogThis("Wrong RFID, door remains locked");
+            _logger.Received(0).LogThis("Door closed, awaiting RFID tag");
+
+
+            _userOutput.Received(0).Notify_YouMayOpenDoorAndDisconnect();
+            _userOutput.Received(0).Notify_DoorOpened();
+            _userOutput.Received(0).Notify_ScanRFID_ToLock();
+            _userOutput.Received(0).Notify_CheckingRFID();
+            _userOutput.Received(0).Notify_DoorLocked_ScanRfidToUnlock();
+            _userOutput.Received(0).Notify_YouMayOpenDoorAndDisconnect();
 
         }
 

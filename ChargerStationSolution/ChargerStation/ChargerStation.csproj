@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChargeControl.cs" />
-    <Compile Include="ConsoleLogger.cs" />
     <Compile Include="ConsoleOutput.cs" />
     <Compile Include="DoorSensor.cs" />
     <Compile Include="FileLogger.cs" />

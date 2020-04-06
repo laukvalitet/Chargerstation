@@ -68,6 +68,29 @@ namespace ChargerStation.Test.Unit
                 //assert
                 _logger.Received(1).LogThis("Current current value: 3 mA");
             }
-
-        }
-}
+            
+            [Test]
+            public void InitiateCharging_Invokes_USBCharger()
+            {
+                //arrange
+                
+                //act
+                _uut.InitiateCharging();
+                
+                //assert
+                _usbCharger.Received(1).InitiateCharging();
+            } 
+            
+            [Test]
+            public void TerminateCharging_Invokes_USBCharger()
+            {
+                //arrange
+                
+                //act
+                _uut.TerminateCharging();
+                
+                //assert
+                _usbCharger.Received(1).TerminateCharging();
+            }
+            }
+    }

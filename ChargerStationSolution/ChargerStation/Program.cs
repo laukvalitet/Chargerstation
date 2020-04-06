@@ -17,8 +17,9 @@ namespace ChargerStation
             VerificationUnit verificationUnit = new VerificationUnit();
             RfidReader rfidReader = new RfidReader();
             USBCharger usbCharger = new USBCharger();
+            ChargeControl chargeControl = new ChargeControl(usbCharger,fileLogger);
 
-            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,usbCharger,fileLogger,verificationUnit);
+            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,chargeControl,fileLogger,verificationUnit);
 
             Console.WriteLine("Write open to open");
             Console.WriteLine("Write connect to connect phone.");

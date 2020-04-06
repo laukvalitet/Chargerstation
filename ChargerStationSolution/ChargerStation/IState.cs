@@ -8,7 +8,7 @@ namespace ChargerStation
 {
     public interface IState
     {
-        IStationControl StationControlRef { get; set; }
+        StationControl StationControlRef { get; set; }
         void OnEntry();
         void OnDoorClosed();
         void OnDoorOpened();

@@ -57,6 +57,7 @@
     <Compile Include="ConsoleOutput.cs" />
     <Compile Include="DoorSensor.cs" />
     <Compile Include="FileLogger.cs" />
+    <Compile Include="IChargeControl.cs" />
     <Compile Include="IUSBCharger.cs" />
     <Compile Include="IDoorSensor.cs" />
     <Compile Include="ILogger.cs" />

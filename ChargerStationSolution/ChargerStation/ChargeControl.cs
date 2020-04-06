@@ -6,10 +6,49 @@ using System.Threading.Tasks;
 using System.Timers;
 
 
-namespace ChargerStation
+namespace ChargerStation 
 {
-    public class ChargeControl
+    public class ChargeControl : IChargeControl
     {
+        
+        public event EventHandler<EventArgs> PhoneConnected;
+        public event EventHandler<EventArgs> PhoneDisconnected;
 
+        public IUSBCharger UsbCharger { get; set; }
+        public ILogger Logger { get; set; }
+
+        public ChargeControl(IUSBCharger usbCharger, ILogger logger)
+        {
+            UsbCharger = usbCharger;
+            Logger = logger;
+            UsbCharger.PhoneConnected += OnPhoneConnected;
+            UsbCharger.PhoneConnected += OnPhoneDisconnected;
+            UsbCharger.NewCurrentValueEvent += NewCurrentValueHandler;
+        }
+
+        public void OnPhoneConnected(object sender, EventArgs e)
+        {
+            PhoneConnected?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void OnPhoneDisconnected(object sender, EventArgs e)
+        {
+            PhoneDisconnected?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void NewCurrentValueHandler(object sender, CurrentEventArgs e)
+        {
+            Logger.LogThis("Current current value: " + e.Current + " mA");
+        }
+
+        public void InitiateCharging()
+        {
+            UsbCharger.InitiateCharging();
+        }
+
+        public void TerminateCharging()
+        {
+            UsbCharger.TerminateCharging();
+        }
     }
 }

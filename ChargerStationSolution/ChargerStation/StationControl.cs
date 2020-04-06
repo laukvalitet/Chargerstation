@@ -7,7 +7,7 @@ using ChargerStation.States;
 
 namespace ChargerStation
 {
-    public class StationControl : IStationControl
+    public class StationControl 
     {
         public IState VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED { get; set; }
         public IState VACANT_DOOR_OPEN_NO_PHONE_CONNECTED { get; set; }
@@ -19,7 +19,7 @@ namespace ChargerStation
         public IDoorSensor DoorSensor { get; set; }
         public IUserOutput UserOutput { get; set; }
         public IRfidReader RfidReader { get; set; }
-        public IUSBCharger ChargeControl { get; set; }
+        public IChargeControl ChargeControl { get; set; }
         public ILogger Logger { get; set; }
         public IVerificationUnit VerificationUnit { get; set; }
 
@@ -27,7 +27,7 @@ namespace ChargerStation
      
 
         public StationControl(IDoorSensor doorSensor, IUserOutput userOutput, IRfidReader rfidReader, 
-                IUSBCharger chargeControl, ILogger logger, IVerificationUnit verificationUnit)
+                IChargeControl chargeControl, ILogger logger, IVerificationUnit verificationUnit)
         {
             //init states
             VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED=new States.VacantDoorClosedNoPhoneConnected(this);
@@ -53,7 +53,7 @@ namespace ChargerStation
             RfidReader.RfidDetected += RfidDetectedHandler;
             ChargeControl.PhoneConnected += PhoneConnectedHandler;
             ChargeControl.PhoneDisconnected += PhoneDisconnectedHandler;
-            ChargeControl.NewCurrentValueEvent += NewCurrentValueHandler;
+            
 
             //Initial state
             SetState(VACANT_DOOR_CLOSED_NO_PHONE_CONNECTED);
@@ -91,9 +91,6 @@ namespace ChargerStation
             CurrentState.OnRfidDetected(e.ID);
         }
 
-        public void NewCurrentValueHandler(object sender, CurrentEventArgs e)
-        {
-            Logger.LogThis("Current current value: " + e.Current + " mA");
-        }
+       
     }
 }

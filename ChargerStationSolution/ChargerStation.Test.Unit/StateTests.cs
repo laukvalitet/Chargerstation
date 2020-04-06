@@ -56,7 +56,8 @@ namespace ChargerStation.Test.Unit
             //assert
             _chargeControl.Received(1).InitiateCharging();
             _logger.Received(1).LogThis("Phone connected");
-            _userOutput.Received().Notify_PhoneConnectedCloseDoor();
+            _userOutput.Received(1).Notify_PhoneConnectedCloseDoor();
+            
         }
 
         [Test]

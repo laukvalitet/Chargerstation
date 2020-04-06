@@ -13,13 +13,11 @@ namespace ChargerStation.Test.Unit
     public class VerificationUnitTests
     {
         private VerificationUnit _uut;
-        private IStationControl _stationControl;
 
         [SetUp]
         public void Setup()
         {
             _uut = new VerificationUnit();
-            _stationControl = Substitute.For<IStationControl>();
         }
         
         [Test]

@@ -21,10 +21,6 @@ namespace ChargerStation.States
             StationControlRef.UserOutput.Notify_DoorLocked_ScanRfidToUnlock();
         }
 
-        public void OnExit()
-        {
-        }
-
         public void OnDoorClosed()
         {
         }

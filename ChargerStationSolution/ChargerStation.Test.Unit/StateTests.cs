@@ -19,6 +19,7 @@ namespace ChargerStation.Test.Unit
         private IUserOutput _userOutput;
         private IVerificationUnit _verificationUnit;
         private StationControl _uut;
+        private ConsoleOutput _consoleOutput;
 
         [SetUp]
         public void Setup()
@@ -29,6 +30,7 @@ namespace ChargerStation.Test.Unit
             _chargeControl = Substitute.For<IUSBCharger>();
             _logger = Substitute.For<ILogger>();
             _verificationUnit = Substitute.For<IVerificationUnit>();
+            _consoleOutput = Substitute.For<ConsoleOutput>();
 
             _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger,_verificationUnit);
         }
@@ -40,6 +42,7 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
+            _consoleOutput.Received(1).Notify_ConnectPhone();
             _logger.Received(1).LogThis("Door opened");
             _userOutput.Received().Notify_ConnectPhone();
         }

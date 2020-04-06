@@ -13,20 +13,30 @@ namespace ChargerStation.Test.Unit
     public class VerificationUnitTests
     {
         private VerificationUnit _uut;
-        private IStationControl _stationControl;
 
         [SetUp]
         public void Setup()
         {
             _uut = new VerificationUnit();
-            _stationControl = Substitute.For<IStationControl>();
         }
         
         [Test]
-        public void LockDoorWithReceivedIDTes()
+        public void TryUnlockDoorWithReceivedID_ReturnsFalseOnWrongID()
         {
-            //void LockDoorWithReceivedID(int ID);
-            //bool TryUnlockDoorWithReceivedID(int ID);
+            //arrange
+            _uut.LockDoorWithReceivedID(1);
+            //act
+            //assert
+            Assert.AreEqual(_uut.TryUnlockDoorWithReceivedID(2),false);
+        }
+        [Test]
+        public void TryUnlockDoorWithReceivedID_ReturnsTrueOnWrongID()
+        {
+            //arrange
+            _uut.LockDoorWithReceivedID(1);
+            //act
+            //assert
+            Assert.AreEqual(_uut.TryUnlockDoorWithReceivedID(1),true);
         }
     }
 }

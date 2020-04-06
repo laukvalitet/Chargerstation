@@ -19,7 +19,6 @@ namespace ChargerStation.Test.Unit
         private IUserOutput _userOutput;
         private IVerificationUnit _verificationUnit;
         private StationControl _uut;
-        private ConsoleOutput _consoleOutput;
 
         [SetUp]
         public void Setup()
@@ -30,7 +29,6 @@ namespace ChargerStation.Test.Unit
             _chargeControl = Substitute.For<IUSBCharger>();
             _logger = Substitute.For<ILogger>();
             _verificationUnit = Substitute.For<IVerificationUnit>();
-            _consoleOutput = Substitute.For<ConsoleOutput>();
 
             _uut = new StationControl(_doorSensor, _userOutput, _rfidReader, _chargeControl, _logger,_verificationUnit);
         }
@@ -58,7 +56,8 @@ namespace ChargerStation.Test.Unit
             //assert
             _chargeControl.Received(1).InitiateCharging();
             _logger.Received(1).LogThis("Phone connected");
-            _userOutput.Received().Notify_PhoneConnectedCloseDoor();
+            _userOutput.Received(1).Notify_PhoneConnectedCloseDoor();
+            
         }
 
         [Test]

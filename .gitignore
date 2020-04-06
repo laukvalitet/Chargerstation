@@ -360,3 +360,4 @@ MigrationBackup/
 /ChargerStationSolution/ChargerStation/bin/Debug/System.Threading.Tasks.Extensions.dll
 /ChargerStationSolution/ChargerStation/bin/Debug/NSubstitute.xml
 /ChargerStationSolution/ChargerStation/bin/Debug/System.Threading.Tasks.Extensions.xml
+.DS_Store

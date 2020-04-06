@@ -38,6 +38,7 @@ namespace ChargerStation.Test.Unit
         {
             //act
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            $""
 
             //assert
             _logger.Received(1).LogThis("Door opened");

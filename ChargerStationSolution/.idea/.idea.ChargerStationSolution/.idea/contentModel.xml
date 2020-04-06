@@ -13,12 +13,12 @@
         <e p="ConsoleOutput.cs" t="Include" />
         <e p="DoorSensor.cs" t="Include" />
         <e p="FileLogger.cs" t="Include" />
-        <e p="IChargeControl.cs" t="Include" />
         <e p="IDoorSensor.cs" t="Include" />
         <e p="ILogger.cs" t="Include" />
         <e p="IRfidReader.cs" t="Include" />
         <e p="IState.cs" t="Include" />
         <e p="IStationControl.cs" t="Include" />
+        <e p="IUSBCharger.cs" t="Include" />
         <e p="IUserOutput.cs" t="Include" />
         <e p="IVerificationUnit.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
@@ -37,6 +37,7 @@
           <e p="VacantDoorOpenPhoneConnected.cs" t="Include" />
         </e>
         <e p="StationControl.cs" t="Include" />
+        <e p="USBCharger.cs" t="Include" />
         <e p="VerificationUnit.cs" t="Include" />
       </e>
       <e p="ChargerStation.Test.Unit" t="IncludeRecursive">
@@ -49,6 +50,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="StateTests.cs" t="Include" />
+        <e p="USBChargerTest.cs" t="Include" />
         <e p="VerificationUnitTests.cs" t="Include" />
       </e>
       <e p="ChargerStationSolution.sln" t="IncludeFlat" />

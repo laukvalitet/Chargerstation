@@ -167,7 +167,7 @@ namespace ChargerStation.Test.Unit
 
             //assert
 
-            _logger.Received(1).LogThis("Door opened");
+            _logger.Received(2).LogThis("Door opened");
             _userOutput.Received().Notify_DoorOpened();
         }
 

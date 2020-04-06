@@ -67,6 +67,7 @@ namespace ChargerStation
             }
         }
 
+
         public void OnPhoneConnected()
         {
             Connected = true;

@@ -14,7 +14,6 @@ namespace ChargerStation
             DoorSensor doorSensor = new DoorSensor();
             ConsoleOutput consoleOutput = new ConsoleOutput();
             FileLogger fileLogger = new FileLogger();
-            ConsoleLogger consoleLogger = new ConsoleLogger();
             VerificationUnit verificationUnit = new VerificationUnit();
             RfidReader rfidReader = new RfidReader();
             USBCharger usbCharger = new USBCharger();

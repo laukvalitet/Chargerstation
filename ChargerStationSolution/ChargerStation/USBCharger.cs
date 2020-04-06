@@ -70,13 +70,13 @@ namespace ChargerStation
         public void OnPhoneConnected()
         {
             Connected = true;
-            PhoneConnected?.Invoke(this, EventArgs.Empty);
+            this.PhoneConnected?.Invoke(this, EventArgs.Empty);
         }
 
         public void OnPhoneDisconnected()
         {
             Connected = false;
-            PhoneDisconnected?.Invoke(this, EventArgs.Empty);
+            this.PhoneDisconnected?.Invoke(this, EventArgs.Empty);
         }
 
         public void SimulateConnected(bool connected)

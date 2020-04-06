@@ -58,7 +58,7 @@
     <Compile Include="ConsoleOutput.cs" />
     <Compile Include="DoorSensor.cs" />
     <Compile Include="FileLogger.cs" />
-    <Compile Include="IChargeControl.cs" />
+    <Compile Include="IUSBCharger.cs" />
     <Compile Include="IDoorSensor.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IRfidReader.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="States\VacantDoorClosedPhoneConnectedAwaitingRFID.cs" />
     <Compile Include="States\VacantDoorOpenNoPhoneConnected.cs" />
     <Compile Include="States\VacantDoorOpenPhoneConnected.cs" />
+    <Compile Include="USBCharger.cs" />
     <Compile Include="VerificationUnit.cs" />
   </ItemGroup>
   <ItemGroup>

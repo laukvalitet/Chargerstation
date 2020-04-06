@@ -25,3 +25,17 @@ C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\Ch
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.csproj.CopyComplete
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.exe
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.pdb
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\ChargerStation.exe.config
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\ChargerStation.exe
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\ChargerStation.pdb
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\Castle.Core.dll
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\NSubstitute.dll
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\Castle.Core.xml
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\NSubstitute.xml
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.csprojAssemblyReference.cache
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.csproj.CoreCompileInputs.cache
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.csproj.CopyComplete
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.exe
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation\obj\Debug\ChargerStation.pdb

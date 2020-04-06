@@ -17,9 +17,9 @@ namespace ChargerStation
             ConsoleLogger consoleLogger = new ConsoleLogger();
             VerificationUnit verificationUnit = new VerificationUnit();
             RfidReader rfidReader = new RfidReader();
-            ChargeControl chargeControl = new ChargeControl();
+            USBCharger usbCharger = new USBCharger();
 
-            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,chargeControl,fileLogger,verificationUnit);
+            StationControl stationControl = new StationControl(doorSensor,consoleOutput,rfidReader,usbCharger,fileLogger,verificationUnit);
 
             Console.WriteLine("Write open to open");
             Console.WriteLine("Write connect to connect phone.");
@@ -39,7 +39,7 @@ namespace ChargerStation
                 }
                 else if (userInput == "connect" )
                 {
-                    chargeControl.OnPhoneConnected();
+                    usbCharger.OnPhoneConnected();
                 }
                 else if (userInput == "close")
                 {
@@ -53,7 +53,7 @@ namespace ChargerStation
                 }
                 else if (userInput == "disconnect")
                 {
-                    chargeControl.OnPhoneDisconnected();
+                    usbCharger.OnPhoneDisconnected();
                 }
             }
         }

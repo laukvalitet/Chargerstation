@@ -35,3 +35,7 @@ C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\Ch
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\nunit.framework.xml
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csproj.CopyComplete
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csprojAssemblyReference.cache
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csproj.CoreCompileInputs.cache
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.dll
+C:\Users\sebbe\Desktop\Software_Test\SWT_handin_2\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.pdb

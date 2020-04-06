@@ -13,7 +13,7 @@ namespace ChargerStation.Test.Unit
     public class StateTests
     {
         private IDoorSensor _doorSensor;
-        private IChargeControl _chargeControl;
+        private IUSBCharger _chargeControl;
         private ILogger _logger;
         private IRfidReader _rfidReader;
         private IUserOutput _userOutput;
@@ -26,7 +26,7 @@ namespace ChargerStation.Test.Unit
             _doorSensor = Substitute.For<IDoorSensor>();
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
-            _chargeControl = Substitute.For<IChargeControl>();
+            _chargeControl = Substitute.For<IUSBCharger>();
             _logger = Substitute.For<ILogger>();
             _verificationUnit = Substitute.For<IVerificationUnit>();
 

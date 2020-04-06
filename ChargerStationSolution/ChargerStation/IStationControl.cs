@@ -13,7 +13,7 @@ namespace ChargerStation
         IDoorSensor DoorSensor { get; set; }
         IUserOutput UserOutput { get; set; }
         IRfidReader RfidReader { get; set; }
-        IChargeControl ChargeControl { get; set; }
+        IUSBCharger ChargeControl { get; set; }
         ILogger Logger { get; set; }
         IVerificationUnit VerificationUnit { get; set; }
         void SetState(IState newState);

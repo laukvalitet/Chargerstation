@@ -13,7 +13,8 @@ namespace ChargerStation.Test.Unit
     public class IllegalStateChangeTests
     {
         private IDoorSensor _doorSensor;
-        private IUSBCharger _chargeControl;
+        private IChargeControl _chargeControl;
+        private IUSBCharger _usbCharger;
         private ILogger _logger;
         private IRfidReader _rfidReader;
         private IUserOutput _userOutput;
@@ -26,7 +27,8 @@ namespace ChargerStation.Test.Unit
             _doorSensor = Substitute.For<IDoorSensor>();
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
-            _chargeControl = Substitute.For<IUSBCharger>();
+            _chargeControl = Substitute.For<IChargeControl>();
+            _usbCharger = Substitute.For<IUSBCharger>();
             _logger = Substitute.For<ILogger>();
             _verificationUnit = Substitute.For<IVerificationUnit>();
 

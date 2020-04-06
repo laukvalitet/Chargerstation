@@ -173,7 +173,6 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
             _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(1234));
 
-
             //act
 
             //assert

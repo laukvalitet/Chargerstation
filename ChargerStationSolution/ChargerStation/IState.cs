@@ -10,7 +10,6 @@ namespace ChargerStation
     {
         IStationControl StationControlRef { get; set; }
         void OnEntry();
-        void OnExit();
         void OnDoorClosed();
         void OnDoorOpened();
         void OnRfidDetected(int RFIDtag);

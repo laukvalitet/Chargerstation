@@ -119,6 +119,8 @@ namespace ChargerStation.Test.Unit
             //act
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
             _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
+            _rfidReader.OnRfidDetected(2000);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
 
 
             //assert

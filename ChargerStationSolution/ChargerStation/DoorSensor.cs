@@ -14,7 +14,7 @@ namespace ChargerStation
         {
             DoorOpened?.Invoke(this, EventArgs.Empty);
         }
-
+        
         public void OnDoorClosed()
         {
             DoorClosed?.Invoke(this, EventArgs.Empty);

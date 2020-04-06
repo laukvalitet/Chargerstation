@@ -21,9 +21,7 @@ namespace ChargerStation.States
             StationControlRef.UserOutput.Notify_OpenDoorConnectPhone();
         }
 
-        public void OnExit()
-        {
-        }
+
 
         public void OnDoorClosed()
         {

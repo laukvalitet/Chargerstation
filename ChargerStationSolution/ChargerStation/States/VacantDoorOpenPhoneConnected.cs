@@ -20,9 +20,7 @@ namespace ChargerStation.States
             
         }
 
-        public void OnExit()
-        {
-        }
+   
 
         public void OnDoorClosed()
         {

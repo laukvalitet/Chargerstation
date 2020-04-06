@@ -67,5 +67,15 @@ namespace ChargerStation
         {
             Console.WriteLine("Attempt to charging phone failed, disconnect your phone.");
         }
+
+        public void Notify_DoorOpened()
+        {
+            Console.WriteLine("Door opened");
+        }
+
+        public void Notify_DoorClosed()
+        {
+            Console.WriteLine("Door closed");
+        }
     }
 }

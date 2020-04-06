@@ -16,3 +16,22 @@
 /Users/Oskar/OneDrive/onedrive local/Mine dokumenter/IKT - local/4. semester/SWT/SWT_repo/Chargerstation/ChargerStationSolution/ChargerStation.Test.Unit/obj/Debug/ChargerStation.Test.Unit.csproj.CopyComplete
 /Users/Oskar/OneDrive/onedrive local/Mine dokumenter/IKT - local/4. semester/SWT/SWT_repo/Chargerstation/ChargerStationSolution/ChargerStation.Test.Unit/obj/Debug/ChargerStation.Test.Unit.dll
 /Users/Oskar/OneDrive/onedrive local/Mine dokumenter/IKT - local/4. semester/SWT/SWT_repo/Chargerstation/ChargerStationSolution/ChargerStation.Test.Unit/obj/Debug/ChargerStation.Test.Unit.pdb
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csprojAssemblyReference.cache
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csproj.CoreCompileInputs.cache
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.pdb
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\ChargerStation.Test.Unit.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\ChargerStation.Test.Unit.pdb
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\Castle.Core.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\ChargerStation.exe
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\NSubstitute.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\nunit.framework.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\ChargerStation.pdb
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\ChargerStation.exe.config
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\Castle.Core.xml
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\NSubstitute.xml
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\nunit.framework.pdb
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\nunit.framework.xml
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ermin\Source\Repos\laukvalitet\Chargerstation\ChargerStationSolution\ChargerStation.Test.Unit\obj\Debug\ChargerStation.Test.Unit.csproj.CopyComplete

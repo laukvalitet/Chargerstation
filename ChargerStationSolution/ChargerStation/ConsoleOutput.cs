@@ -77,5 +77,10 @@ namespace ChargerStation
         {
             Console.WriteLine("Door closed");
         }
+
+        public void Notify_PhoneDisconnected_please_close_door()
+        {
+            Console.WriteLine("Phone has been disconnected, please close the door.");
+        }
     }
 }

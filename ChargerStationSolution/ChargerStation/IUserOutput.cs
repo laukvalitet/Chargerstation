@@ -22,5 +22,6 @@ namespace ChargerStation
         void Notify_ChargerError();
         void Notify_DoorOpened();
         void Notify_DoorClosed();
+        void Notify_PhoneDisconnected_please_close_door();
     }
 }

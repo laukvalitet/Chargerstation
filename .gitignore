@@ -347,3 +347,16 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /ChargerStationSolution/packages/
+
+
+
+
+/ChargerStationSolution/ChargerStation/bin/Debug/Castle.Core.dll
+/ChargerStationSolution/ChargerStation/bin/Debug/Castle.Core.xml
+/ChargerStationSolution/ChargerStation/bin/Debug/ChargerStation.exe
+/ChargerStationSolution/ChargerStation/bin/Debug/ChargerStation.exe.config
+/ChargerStationSolution/ChargerStation/bin/Debug/ChargerstationLog.txt
+/ChargerStationSolution/ChargerStation/bin/Debug/NSubstitute.dll
+/ChargerStationSolution/ChargerStation/bin/Debug/System.Threading.Tasks.Extensions.dll
+/ChargerStationSolution/ChargerStation/bin/Debug/NSubstitute.xml
+/ChargerStationSolution/ChargerStation/bin/Debug/System.Threading.Tasks.Extensions.xml

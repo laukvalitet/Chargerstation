@@ -22,6 +22,6 @@ namespace ChargerStation
         void PhoneConnectedHandler(object sender, EventArgs e);
         void PhoneDisconnectedHandler(object sender, EventArgs e);
         void RfidDetectedHandler(object sender, RfidDetectedEventArgs e);
-
+        
     }
 }

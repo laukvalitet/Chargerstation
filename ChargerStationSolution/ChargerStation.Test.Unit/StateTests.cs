@@ -166,7 +166,7 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
-            _logger.Received(1).LogThis("Door has been unlocked");
+            _logger.Received(1).LogThis("Door opened");
             _userOutput.Received().Notify_DoorOpened();
         }
 

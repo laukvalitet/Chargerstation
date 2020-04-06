@@ -166,6 +166,7 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
+
             _logger.Received(1).LogThis("Door opened");
             _userOutput.Received().Notify_DoorOpened();
         }
@@ -184,11 +185,11 @@ namespace ChargerStation.Test.Unit
             _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
 
             //act
-            _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
+            _doorSensor.DoorClosed += Raise.EventWith(EventArgs.Empty);
 
             //assert
-            _logger.Received(1).LogThis("Door closed");
-            _userOutput.Received().Notify_DoorClosed();
+            _logger.Received(2).LogThis("Door is closed");
+            _userOutput.Received().Notify_OpenDoorConnectPhone();
         }
 
     }

@@ -42,7 +42,6 @@ namespace ChargerStation.Test.Unit
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
 
             //assert
-            _consoleOutput.Received(1).Notify_ConnectPhone();
             _logger.Received(1).LogThis("Door opened");
             _userOutput.Received().Notify_ConnectPhone();
         }

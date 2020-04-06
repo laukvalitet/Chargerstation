@@ -25,8 +25,8 @@ namespace ChargerStation.Test.Unit
         [Test]
         public void LockDoorWithReceivedIDTes()
         {
-            void LockDoorWithReceivedID(int ID);
-            bool TryUnlockDoorWithReceivedID(int ID);
+            //void LockDoorWithReceivedID(int ID);
+            //bool TryUnlockDoorWithReceivedID(int ID);
         }
     }
 }

@@ -22,18 +22,18 @@ namespace ChargerStation
             UsbCharger = usbCharger;
             Logger = logger;
             UsbCharger.PhoneConnected += OnPhoneConnected;
-            UsbCharger.PhoneConnected += OnPhoneDisconnected;
+            UsbCharger.PhoneDisconnected += OnPhoneDisconnected;
             UsbCharger.NewCurrentValueEvent += NewCurrentValueHandler;
         }
 
         public void OnPhoneConnected(object sender, EventArgs e)
         {
-            PhoneConnected?.Invoke(this, EventArgs.Empty);
+            this.PhoneConnected?.Invoke(this, EventArgs.Empty);
         }
 
         public void OnPhoneDisconnected(object sender, EventArgs e)
         {
-            PhoneDisconnected?.Invoke(this, EventArgs.Empty);
+            this.PhoneDisconnected?.Invoke(this, EventArgs.Empty);
         }
 
         public void NewCurrentValueHandler(object sender, CurrentEventArgs e)

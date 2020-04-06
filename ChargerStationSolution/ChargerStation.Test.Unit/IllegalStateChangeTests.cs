@@ -13,7 +13,8 @@ namespace ChargerStation.Test.Unit
     public class IllegalStateChangeTests
     {
         private IDoorSensor _doorSensor;
-        private IUSBCharger _chargeControl;
+        private IChargeControl _chargeControl;
+        private IUSBCharger _usbCharger;
         private ILogger _logger;
         private IRfidReader _rfidReader;
         private IUserOutput _userOutput;
@@ -26,7 +27,8 @@ namespace ChargerStation.Test.Unit
             _doorSensor = Substitute.For<IDoorSensor>();
             _userOutput = Substitute.For<IUserOutput>();
             _rfidReader = Substitute.For<IRfidReader>();
-            _chargeControl = Substitute.For<IUSBCharger>();
+            _chargeControl = Substitute.For<IChargeControl>();
+            _usbCharger = Substitute.For<IUSBCharger>();
             _logger = Substitute.For<ILogger>();
             _verificationUnit = Substitute.For<IVerificationUnit>();
 
@@ -118,8 +120,9 @@ namespace ChargerStation.Test.Unit
 
             //act
             _doorSensor.DoorOpened += Raise.EventWith(EventArgs.Empty);
-            _chargeControl.PhoneDisconnected += Raise.EventWith(EventArgs.Empty);
-            _rfidReader.OnRfidDetected(2000);
+            _chargeControl.PhoneConnected += Raise.EventWith(EventArgs.Empty);
+            _rfidReader.RfidDetected += Raise.EventWith(new RfidDetectedEventArgs(2000));
+
 
 
             //assert
@@ -130,7 +133,7 @@ namespace ChargerStation.Test.Unit
             _userOutput.Received(1).Notify_ConnectPhone();
             _logger.Received(1).LogThis("Phone connected");
             _userOutput.Received(1).Notify_PhoneConnectedCloseDoor();
-            _logger.Received(1).LogThis("Phone has been disconnected");
+            
 
 
             //incorrect behaviour
@@ -138,9 +141,9 @@ namespace ChargerStation.Test.Unit
             _logger.Received(0).LogThis("Door has been unlocked");
             _logger.Received(0).LogThis("Wrong RFID, door remains locked");
             _logger.Received(0).LogThis("Door closed, awaiting RFID tag");
+            _logger.Received(0).LogThis("Phone has been disconnected");
 
 
-            _userOutput.Received(0).Notify_YouMayOpenDoorAndDisconnect();
             _userOutput.Received(0).Notify_DoorOpened();
             _userOutput.Received(0).Notify_ScanRFID_ToLock();
             _userOutput.Received(0).Notify_CheckingRFID();

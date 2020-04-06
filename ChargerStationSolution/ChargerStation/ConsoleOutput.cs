@@ -70,7 +70,7 @@ namespace ChargerStation
 
         public void Notify_DoorOpened()
         {
-            Console.WriteLine("Door opened");
+            Console.WriteLine("Door is open, you may disconnect your phone or lock again.");
         }
 
         public void Notify_DoorClosed()

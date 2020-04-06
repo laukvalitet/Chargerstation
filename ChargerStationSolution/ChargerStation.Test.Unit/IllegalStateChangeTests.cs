@@ -130,15 +130,15 @@ namespace ChargerStation.Test.Unit
             _logger.Received(1).LogThis("Phone connected");
             _userOutput.Received(1).Notify_PhoneConnectedCloseDoor();
             _logger.Received(1).LogThis("Phone has been disconnected");
+            _userOutput.Received(1).Notify_YouMayOpenDoorAndDisconnect();
 
 
             //incorrect behaviour
             _logger.Received(0).LogThis("Door has been locked");
             _logger.Received(0).LogThis("Door has been unlocked");
             _logger.Received(0).LogThis("Wrong RFID, door remains locked");
-            _logger.Received(0).LogThis("Phone has been disconnected");
             _logger.Received(0).LogThis("Door closed, awaiting RFID tag");
-            _userOutput.Received(1).Notify_YouMayOpenDoorAndDisconnect();
+
 
 
             _userOutput.Received(0).Notify_DoorOpened();
